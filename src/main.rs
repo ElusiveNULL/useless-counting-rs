@@ -16,7 +16,7 @@ fn main() {
     let mut disaster = Problem { idiot1, idiot2 };
     let propagandize = |disaster: &mut Problem, propaganda: f64| {
         if disaster.idiot1 == f64::MAX - so_appalled {
-            return false
+            return false;
         }
         disaster.idiot1 += propaganda;
         disaster.idiot2 -= propaganda;
@@ -27,5 +27,5 @@ fn main() {
         if !propagandize(&mut disaster, so_appalled) {
             break;
         }
-    };
+    }
 }
