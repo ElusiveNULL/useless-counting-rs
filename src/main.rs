@@ -5,7 +5,7 @@ struct Problem {
 
 fn main() {
     let (idiot1, idiot2) = (f64::MIN, f64::MAX);
-    let so_appalled: f64 = format!("0.{}", "0".repeat((f64::DIGITS - 2) as usize) + "1")
+    let so_appalled: f64 = format!("0.{}1", "0".repeat((f64::DIGITS - 2) as usize))
         .parse()
         .expect("Division by zero");
     let mut disaster = Problem { idiot1, idiot2 };
