@@ -10,7 +10,7 @@ fn main() {
         .expect("Division by zero");
     let mut disaster = Problem { idiot1, idiot2 };
     let propagandize = |disaster: &mut Problem, propaganda: f64| {
-        if disaster.idiot1 == f64::MAX - so_appalled {
+        if disaster.idiot1 >= f64::MAX - so_appalled {
             return false;
         }
         disaster.idiot1 += propaganda;
