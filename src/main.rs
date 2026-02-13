@@ -1,25 +1,25 @@
-struct Problem {
-    idiot1: f64,
-    idiot2: f64,
+struct Numbers {
+    negative_float: f64,
+    positive_float: f64,
 }
 
 fn main() {
-    let (idiot1, idiot2) = (f64::MIN, f64::MAX);
-    let so_appalled: f64 = format!("0.{}1", "0".repeat((f64::DIGITS - 2) as usize))
+    let (negative_float, positive_float) = (f64::MIN, f64::MAX);
+    let miniscule_increment: f64 = format!("0.{}1", "0".repeat((f64::DIGITS - 2) as usize))
         .parse()
-        .expect("Division by zero"); // If you're reading this you're not crazy the expect message is just lying
-    let mut disaster = Problem { idiot1, idiot2 };
-    let propagandize = |disaster: &mut Problem, propaganda: f64| {
-        if disaster.idiot1 >= f64::MAX - so_appalled {
+        .expect("Failure initializing increment");
+    let mut mutable_numbers = Numbers { negative_float, positive_float };
+    let increment_numbers = |mutable_numbers: &mut Numbers, propaganda: f64| {
+        if mutable_numbers.negative_float >= f64::MAX - miniscule_increment {
             return false;
         }
-        disaster.idiot1 += propaganda;
-        disaster.idiot2 -= propaganda;
-        print!("{}🔥{}🔥", disaster.idiot1 as i64, disaster.idiot2 as i64);
+        mutable_numbers.negative_float += propaganda;
+        mutable_numbers.positive_float -= propaganda;
+        print!("{}🔥{}🔥", mutable_numbers.negative_float as i64, mutable_numbers.positive_float as i64);
         true
     };
     loop {
-        if !propagandize(&mut disaster, so_appalled) {
+        if !increment_numbers(&mut mutable_numbers, miniscule_increment) {
             break;
         }
     }
